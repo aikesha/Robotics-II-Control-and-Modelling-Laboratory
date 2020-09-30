@@ -1,6 +1,6 @@
 # Laboratory 3: Joint-Control-by-ROS-Gazebo
 
-## Note: This project is about controlling a motor in ROS using Gazebo,
+### Note: This project is about controlling a motor in ROS using Gazebo. In this laboratory the package "test_move" refers to [ros_snake_robot](https://github.com/fenixkz/ros_snake_robot) package and [dynamixel_robot](https://github.com/arebgun/dynamixel_motor) package.
 
 ## Requirements
 * Ubuntu 16.04
