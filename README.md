@@ -1,4 +1,4 @@
-# Robotics-II-Control-and-Modelling-Laboratory [ROBT 403]
+# Robotics II: Control and Modelling Laboratory [ROBT 403]
 ### Note: This refository is made for laboratory assignments.
 
 ## Laboratory 1-2
