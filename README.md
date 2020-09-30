@@ -1,5 +1,5 @@
 # Robotics II: Control and Modelling Laboratory [ROBT 403]
-### Note: This refository is made for laboratory assignments.
+### Note: This repository was created for laboratory assignments.
 
 ## Laboratory 1-2
 * Ubuntu Installation
