@@ -5,7 +5,7 @@
 ## Requirements
 * Ubuntu 16.04
 * ROS Kinetic
-* Gazebo
+* Gazebo 7
 ## Usage
 
 ### Install additional packages that are required for running the planar robot in Gazebo
