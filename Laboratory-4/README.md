@@ -1,5 +1,5 @@
 # Laboratory_4
-#### Note: In this laboratory the moveit configuration package "moveit_robot" was created by using [ros_snake_robot](https://github.com/fenixkz/ros_snake_robot) package. 
+#### Note: In this laboratory the moveit configuration package "moveit_robot" was created by using [ros_snake_robot](https://github.com/fenixkz/ros_snake_robot) package and by using Moveit installation and configuration pdf files.
 
 ## Launch Gazebo
 ```ROS
