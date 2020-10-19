@@ -11,7 +11,7 @@
 ## The lab 5 task achievements
 
 ### Step 1: Affix the frames to each link.
-<img src="images/frames_affix.png" alt="affix_frames" style="width: 600px;"/>
+<img src="images/frames_affix.PNG" alt="affix_frames" style="width: 600px;"/>
 
 ### Step 2:Find the DH parameters.
 | joint i | alpha | a | d | Ө |
