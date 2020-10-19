@@ -76,11 +76,36 @@ We can see that the values shown in the above of the control panel are the same 
 
 
 ### Step 6: Find the static torques required at the joints to keep the manipulator in the home position and hold position.
-#### Home position
-<p align="center"><img src="images/home_pose.jpg" alt="home_position" style="width: 600px;"/><img src="images/torq_1.jpg" alt="torque1" style="width: 600px;"/></p>
+#### For Home position, we get:
+```script
+figure(1)
+RRR_robot.plot(home_position)
+% RRR_robot.teach()
+```
+<p align="center"><img src="images/home_pose.jpg" alt="home_position" style="width: 600px;"/></p>
 
-#### Hold position
+```script
+%Home position
+j1 = RRR_robot.jacob0(home_position);
+grav_1 = RRR_robot.gravload([0, 0, 1]);
+torque_1 = j1.*grav_1
+```
+<p align="center"><img src="images/torq_1.jpg" alt="torque1" style="width: 600px;"/></p>
+
+#### For Hold position, we get:
+```script
+figure(2)
+RRR_robot.plot(hold_position)
+% RRR_robot.teach()
+```
 <p align="center"><img src="images/hold_pose.jpg" alt="hold_position" style="width: 600px;"/></p>
+
+```script
+%Hold position
+j2 = RRR_robot.jacob0(hold_position);
+grav_2 = RRR_robot.gravload([0, 0, 1]);
+torque_2 = j2.*grav_2
+```
 <p align="center"><img src="images/torq_2.jpg" alt="torque2" style="width: 600px;"/></p>
 
 * According to the results, the torques for HOLD pose are higher than in HOME pose, which means computations in Matlab
