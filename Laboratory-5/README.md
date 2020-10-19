@@ -114,7 +114,7 @@ are most probably correct.
 ### Question
 
 - Why the torques are different for different configurations? 
-- Because torques were calculated using the formula [torque] = [J](-1)* G which shows that torque depends on Jacobian matrix, which is by the way depends on position of a manipulator.
+- Because torques were calculated using the formula [torque] = inverse(J)* G which shows that torque depends on Jacobian matrix, which is by the way depends on position of a manipulator.
 
 
 
