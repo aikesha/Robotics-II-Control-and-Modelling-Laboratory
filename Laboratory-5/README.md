@@ -23,11 +23,18 @@
 
 ### Step 3: Consider each of the three links as a cylinder of homogeneous density having radius of the cross section Ri=0.05m and calculate by using the following formula the associate inertia matrix.
       
-     | 0  0  0 |          | 0.0125  0       0      |               | 0.0125  0       0      | 
-I1 = | 0  0  0 |     I2 = | 0       0.8396  0      |          I3 = | 0       0.8396  0      |  
-     | 0  0  0 |          | 0       0       0.8396 |               | 0       0       0.8396 |  
+     | 0  0  0 |          
+I1 = | 0  0  0 |  
+     | 0  0  0 |          
      
-
+     | 0.0125  0       0      | 
+I2 = | 0       0.8396  0      | 
+     | 0       0       0.8396 |   
+     
+     | 0.0125  0       0      | 
+I2 = | 0       0.8396  0      | 
+     | 0       0       0.8396 | 
+     
 ### Step 4: Model the robot by using the toolbox in Matlab.
 ```script
 L(1) = Revolute('d', 1, 'a', 0, 'alpha', pi/2, ...
