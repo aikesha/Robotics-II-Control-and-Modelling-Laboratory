@@ -16,6 +16,9 @@
 * Moving the robot from script (RViz + Gazebo + Cpp file) that moves the "end" to draw a rectangle and a circle.
 
 ## Laboratory 5
+* Modelling of a 3DOF RRR Manipultor in MatLab/Simulink
+* Joint Control of RRR Manipulator by using Peter Corke’s Robotics Toolbox in MatLab
+
 ## Laboratory 6
 ## Laboratory 7
 ## Laboratory 8
