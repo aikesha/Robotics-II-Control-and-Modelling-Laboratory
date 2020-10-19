@@ -111,8 +111,10 @@ torque_2 = j2.*grav_2
 * According to the results, the torques for HOLD pose are higher than in HOME pose, which means computations in Matlab
 are most probably correct.
 
-* - Why the torques are different for different configurations? 
-* - Because..
+### Question
+
+- Why the torques are different for different configurations? 
+- Because torques were calculated using the formula [torque] = [J](-1)* G which shows that torque depends on Jacobian matrix, which is by the way depends on position of a manipulator.
 
 
 
