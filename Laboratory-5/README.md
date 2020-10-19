@@ -76,19 +76,13 @@ We can see that the values shown in the above of the control panel are the same 
 
 
 ### Step 6:
-<p align="center"><img src="images/frames_affix.PNG" alt="affix_frames" style="width: 600px;"/></p>
+#### Home position
+<p align="center"><img src="images/home_pose.jpg" alt="home_position" style="width: 600px;"/></p>
+<p align="center"><img src="images/torq_1.jpg" alt="torque1" style="width: 600px;"/></p>
 
-
-| Id | Part |
-| -- | -- |
-| 0 | nose |
-| 1 | leftEye |
-| 2 | rightEye |
-
-
-
-
-
+#### Hold position
+<p align="center"><img src="images/hold_pose.jpg" alt="hold_position" style="width: 600px;"/></p>
+<p align="center"><img src="images/torq_2.jpg" alt="torque2" style="width: 600px;"/></p>
 
 
 
