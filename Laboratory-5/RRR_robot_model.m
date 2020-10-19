@@ -49,7 +49,7 @@ j1 = RRR_robot.jacob0(home_position);
 grav_1 = RRR_robot.gravload([0, 0, 1]);
 torque_1 = j1.*grav_1
 
-figure(12)
+figure(2)
 RRR_robot.plot(hold_position)
 % RRR_robot.teach()
 
