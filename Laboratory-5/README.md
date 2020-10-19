@@ -1,4 +1,4 @@
-# Laboratory 5: MatLab Control of RRR Manipulator using Peter Corke’s Robotics Toolbox
+# Laboratory 5: Joint Control of RRR Manipulator by using Peter Corke’s Robotics Toolbox in MatLab
 
 ### Note: This project is about modelling and controlling a 3DOF RRR Manipulator in MatLab in the joint space using different commands and toolbox. In this laboratory the Robotics Toolbox from [Peter Corke's website](https://petercorke.com/) was used. 
 
