@@ -11,14 +11,17 @@
 ## The lab 5 task achievements
 
 ### Step 1: Affix the frames to each link.
-<img src="images/frames_affix.PNG" alt="affix_frames" style="width: 600px;"/>
+<p align="center"><img src="images/frames_affix.PNG" alt="affix_frames" style="width: 600px;"/></p>
+
 
 ### Step 2:Find the DH parameters.
+<p align="center">
 | joint i | alpha | a | d | Ө |
 | -- | -- | -- | -- | -- |
 | 1 | 90 deg | 0 | 1 | Ө1 |
 | 2 | 0 deg | 1 | 0 | Ө2 |
 | 3 | 0 deg | 1 | 0 | Ө3 |
+ </p>
 
 ### Step 3:
 <img src="images/joint1_sine_pid500.jpg" alt="sine_joint1" style="width: 600px;"/>
