@@ -13,24 +13,71 @@
 ### Step 1: Affix the frames to each link.
 <p align="center"><img src="images/frames_affix.PNG" alt="affix_frames" style="width: 600px;"/></p>
 
-
 ### Step 2:Find the DH parameters.
-<p align="center">
+
 | joint i | alpha | a | d | Ө |
 | -- | -- | -- | -- | -- |
 | 1 | 90 deg | 0 | 1 | Ө1 |
 | 2 | 0 deg | 1 | 0 | Ө2 |
 | 3 | 0 deg | 1 | 0 | Ө3 |
- </p>
 
-### Step 3:
-<img src="images/joint1_sine_pid500.jpg" alt="sine_joint1" style="width: 600px;"/>
-### Step 4:
-<img src="images/joint1_sine_pid500.jpg" alt="sine_joint1" style="width: 600px;"/>
-### Step 5:
-<img src="images/joint1_sine_pid500.jpg" alt="sine_joint1" style="width: 600px;"/>
+### Step 3: Consider each of the three links as a cylinder of homogeneous density having radius of the cross section Ri=0.05m and calculate by using the following formula the associate inertia matrix.
+      
+     | 0  0  0 |          | 0.0125  0       0      |               | 0.0125  0       0      | 
+I1 = | 0  0  0 |     I2 = | 0       0.8396  0      |          I3 = | 0       0.8396  0      |  
+     | 0  0  0 |          | 0       0       0.8396 |               | 0       0       0.8396 |  
+     
+
+### Step 4: Model the robot by using the toolbox in Matlab.
+```script
+L(1) = Revolute('d', 1, 'a', 0, 'alpha', pi/2, ...
+    'I', [0, 0, 0], ...
+    'r', [0, 0, 0.5], ...
+    'm', 0, ...
+    'Jm', 1e-4, ...
+    'G', 500, ...
+    'B', 10e-4, ...
+    'Tc', 10e-4, ...
+    'qlim', [-180 180]*deg );
+
+L(2) = Revolute('d', 0, 'a', 1, 'alpha', 0, ...
+    'I', [0.0125, 0.83958, 0.83958], ...
+    'r', [0.5, 0, 0], ...
+    'm', 10, ...
+    'Jm', 1e-4, ...
+    'G', 500, ...
+    'B', 10e-4, ...
+    'Tc', 10e-4, ...
+    'qlim', [-90 90]*deg );
+
+L(3) = Revolute('d', 0, 'a', 1, 'alpha', 0,  ...
+    'I', [0.0125, 0.83958, 0.83958], ...
+    'r', [1.5, 0, 0], ...
+    'm', 10, ...
+    'Jm', 1e-4, ...
+    'G', 500, ...
+    'B', 10e-4, ...
+    'Tc', 10e-4, ...
+    'qlim', [-90 90]*deg );
+```
+
+### Step 5: Plot the robot model and test it by using the virtual teach-pendant.
+```script
+RRR_robot.plot([0, 0, 0])
+```
+<p align="center"><img src="images/hold_pose.jpg" alt="hold_pose1" style="width: 600px;"/></p>
+
+```script
+RRR_robot.teach()
+```
+<p align="center"><img src="images/teach_pose.jpg" alt="teach_pose" style="width: 600px;"/></p>
+
+We can see that the values shown in the above of the control panel are the same as the values appeared in the Control Window:
+<p align="center"><img src="images/fkine_command.jpg" alt="fkine" style="width: 600px;"/></p>
+
+
 ### Step 6:
-<img src="images/joint1_sine_pid500.jpg" alt="sine_joint1" style="width: 600px;"/>
+<p align="center"><img src="images/frames_affix.PNG" alt="affix_frames" style="width: 600px;"/></p>
 
 
 | Id | Part |
