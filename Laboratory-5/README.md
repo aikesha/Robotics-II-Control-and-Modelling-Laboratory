@@ -2,6 +2,8 @@
 
 ### Note: This project is about modelling and controlling a 3DOF RRR Manipulator in MatLab in the joint space using different commands and toolbox. In this laboratory the Robotics Toolbox from [Peter Corke's website](https://petercorke.com/) was used. 
 
+The video [result is on YouTube](https://youtu.be/3WVUHQYB6qY).
+
 ## Requirements
 * Windows 10
 * MatLab R2018b
