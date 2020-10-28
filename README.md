@@ -19,6 +19,10 @@
 * Modelling of a 3DOF RRR Manipultor in MatLab/Simulink
 * Joint Control of RRR Manipulator by using Peter Corke’s Robotics Toolbox in MatLab
 
+## Laboratory 5 (Part 2) 
+* Joint Control of RRR Manipulator by using Peter Corke’s Robotics Toolbox in MatLab
+* This laboratory uses Lab 5 materials for PID control in Simulink.
+
 ## Laboratory 6
 ## Laboratory 7
 ## Laboratory 8
