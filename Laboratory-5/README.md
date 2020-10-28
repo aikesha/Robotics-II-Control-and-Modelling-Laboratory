@@ -113,6 +113,10 @@ torque_2 = j2.*grav_2
 * According to the results, the torques for HOLD pose are higher than in HOME pose, which means computations in Matlab
 are most probably correct.
 
+### Extra Task: Planar Robot (steps 1-4 copied).
+The steps 1-4 were reused for this task, and 2 more links with some random inertia and mass values. The result can be seen from here:
+<p align="center"><img src="images/planarrobot.PNG" alt="planar" style="width: 600px;"/></p>
+
 ### The Question
 
 - Why the torques are different for different configurations? 
