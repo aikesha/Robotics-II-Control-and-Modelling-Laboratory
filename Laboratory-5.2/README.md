@@ -13,7 +13,7 @@ The video [result is on YouTube](https://youtu.be/3WVUHQYB6qY).
 ## The lab 5 Part 2 task achievements
 
 ### Step 1: 
-<p align="center"><img src="images/first_model.PNG" alt="model_f" style="width: 600px;"/></p>
+<p align="center"><img src="images/ffirst_model.PNG" alt="model_f" style="width: 600px;"/></p>
 <p align="center"><img src="images/first_model_results.PNG" alt="model_f_results" style="width: 600px;"/></p>
 
 ### Step 2:
