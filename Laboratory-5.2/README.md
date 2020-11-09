@@ -16,12 +16,12 @@ The video [result is on YouTube](https://youtu.be/3WVUHQYB6qY).
 <p align="center"><img src="images/ffirst_model.PNG" alt="model_f" style="width: 600px;"/></p>
 <p align="center"><img src="images/first_model_results.PNG" alt="model_f_results" style="width: 600px;"/></p>
 
-### Step 2:
+### Step 2-3:
 <p align="center"><img src="images/second_model.PNG" alt="model_s" style="width: 600px;"/></p>
 <p align="center"><img src="images/second_model_results.PNG" alt="model_s_results" style="width: 600px;"/></p>
 
-### Extra Task: Planar Robot (steps 1-2 copied).
-The steps 1-2 were reused for this task, and 2 more links with some random inertia and mass values. The result can be seen from here:
+### Extra Task: Planar Robot (steps 1-3 copied).
+The steps 1-3 were reused for this task, and 2 more links with some random inertia and mass values. The result can be seen from here:
 <p align="center"><img src="images/planar_robot_model.PNG" alt="model_pr" style="width: 600px;"/></p>
 <p align="center"><img src="images/planar_robot_model_results.PNG" alt="model_pr_results" style="width: 600px;"/></p>
 
