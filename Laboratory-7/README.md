@@ -11,23 +11,20 @@
 <p align="center"><img src="images/planar_robot_details.PNG" alt="planar_robot" style="width: 600px;"/></p>
 
 ### The first steps of tuning with mean error eqaul to just below 60%.
-
 <p align="center"><img src="images/t_p_two.PNG" alt="training1" style="width: 600px;"/></p>
 
 <p align="center"><img src="images/t_p_two_2.PNG" alt="training12" style="width: 600px;"/></p>
 
 ### The best one to tune, and the error is about 30%
-
 <p align="center"><img src="images/t_p_best.PNG" alt="training2" style="width: 600px;"/></p>
+
 ### For this I incresed the number of data to 20000, so that it took around 25 minutes to train the model:
 <p align="center"><img src="images/t_p_best_3.PNG" alt="training22" style="width: 600px;"/></p>
-### Ande the result is:
+
+### And the result is:
 <p align="center"><img src="images/t_p_best_2.PNG" alt="training23" style="width: 600px;"/></p>
       
-
-     
 ### And Scatter3 to show FK resutls:
-
 ```script
 home = [45 45 0 45 -45]*deg; 
 planar_robot.plot(home)
