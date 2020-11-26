@@ -1,127 +1,49 @@
-# Laboratory 5 (Part 2): Joint Control of RRR Manipulator by using Peter Corke’s Robotics Toolbox in MatLab
-
-### Note: This laboratory uses Lab 5 materials for PID control in Simulink.
-
-The video [result is on YouTube](https://youtu.be/3WVUHQYB6qY).
+# Laboratory 6:  Obtain Forward Kinematics without the robot model using Matlab scripts by tuning the Neural Networks
 
 ## Requirements
 * Windows 10
 * MatLab R2018b
 (It is okay to use other OS or version of MatLab)
 
+## The lab 6 task achievements
 
-## The lab 5 task achievements
+### Parameters of the Planar Robot
+<p align="center"><img src="images/planar_robot_details.PNG" alt="planar_robot" style="width: 600px;"/></p>
 
-### Step 1: Affix the frames to each link.
-<p align="center"><img src="images/frames_affix.PNG" alt="affix_frames" style="width: 600px;"/></p>
+### The first steps of tuning with mean error eqaul to just below 60%.
+<p align="center"><img src="images/t_p_two.PNG" alt="training1" style="width: 600px;"/></p>
 
-### Step 2:Find the DH parameters.
+<p align="center"><img src="images/t_p_two_2.PNG" alt="training12" style="width: 600px;"/></p>
 
-| joint i | alpha | a | d | Ө |
-| -- | -- | -- | -- | -- |
-| 1 | 90 deg | 0 | 1 | Ө1 |
-| 2 | 0 deg | 1 | 0 | Ө2 |
-| 3 | 0 deg | 1 | 0 | Ө3 |
+### The best one to tune, and the error is about 30%
+<p align="center"><img src="images/t_p_best.PNG" alt="training2" style="width: 600px;"/></p>
 
-### Step 3: Consider each of the three links as a cylinder of homogeneous density having radius of the cross section Ri=0.05m and calculate by using the following formula the associate inertia matrix.
+### For this I incresed the number of data to 20000, so that it took around 25 minutes to train the model:
+<p align="center"><img src="images/t_p_best_3.PNG" alt="training22" style="width: 600px;"/></p>
+
+### And the result is:
+<p align="center"><img src="images/t_p_best_2.PNG" alt="training23" style="width: 600px;"/></p>
       
-         [ 0 0 0 ]         [ 0.0125  0       0      ]              [ 0.0125  0       0      ] 
-    I1 = [ 0 0 0 ]    I2 = [ 0       0.8396  0      ]         I2 = [ 0       0.8396  0      ]
-         [ 0 0 0 ]         [ 0       0       0.8396 ]              [ 0       0       0.8396 ]
-     
-### Step 4: Model the robot by using the toolbox in Matlab.
+### And Scatter3 to show FK resutls:
 ```script
-L(1) = Revolute('d', 1, 'a', 0, 'alpha', pi/2, ...
-    'I', [0, 0, 0], ...
-    'r', [0, 0, 0.5], ...
-    'm', 0, ...
-    'Jm', 1e-4, ...
-    'G', 500, ...
-    'B', 10e-4, ...
-    'Tc', 10e-4, ...
-    'qlim', [-180 180]*deg );
+home = [45 45 0 45 -45]*deg; 
+planar_robot.plot(home)
+pose_end2 = planar_robot.fkine(home); 
+hold on
 
-L(2) = Revolute('d', 0, 'a', 1, 'alpha', 0, ...
-    'I', [0.0125, 0.83958, 0.83958], ...
-    'r', [0.5, 0, 0], ...
-    'm', 10, ...
-    'Jm', 1e-4, ...
-    'G', 500, ...
-    'B', 10e-4, ...
-    'Tc', 10e-4, ...
-    'qlim', [-90 90]*deg );
+%real
+xyz1 = transl(pose_end2);
+scatter3(xyz1(1),xyz1(2),xyz1(3), '*')
 
-L(3) = Revolute('d', 0, 'a', 1, 'alpha', 0,  ...
-    'I', [0.0125, 0.83958, 0.83958], ...
-    'r', [1.5, 0, 0], ...
-    'm', 10, ...
-    'Jm', 1e-4, ...
-    'G', 500, ...
-    'B', 10e-4, ...
-    'Tc', 10e-4, ...
-    'qlim', [-90 90]*deg );
+% predicted
+samplep = ones(1,1,3);
+samplep(1,:) = xyz1;
+xyz2 = predict(net, samplep);
+predicted = [xyz2(1),xyz2(2),xyz2(3), xyz2(4), xyz2(5)]
+pose_end2 = planar_robot.fkine(predicted);
+xyz3 = transl(pose_end2);
+hold on 
+scatter3(xyz3(1),xyz3(2),xyz3(3),'filled')
 ```
-
-### Step 5: Plot the robot model and test it by using the virtual teach-pendant.
-```script
-RRR_robot.plot([0, 0, 0])
-```
-<p align="center"><img src="images/hold_pose.jpg" alt="hold_pose1" style="width: 600px;"/></p>
-
-```script
-RRR_robot.teach()
-```
-<p align="center"><img src="images/teach_pose.jpg" alt="teach_pose" style="width: 600px;"/></p>
-
-We can see that the values shown in the above of the control panel are the same as the values appeared in the Control Window:
-<p align="center"><img src="images/fkine_command.jpg" alt="fkine" style="width: 600px;"/></p>
-
-
-### Step 6: Find the static torques required at the joints to keep the manipulator in the home position and hold position.
-#### For Home position, we get:
-```script
-figure(1)
-RRR_robot.plot(home_position)
-% RRR_robot.teach()
-```
-<p align="center"><img src="images/home_pose.jpg" alt="home_position" style="width: 600px;"/></p>
-
-```script
-%Home position
-j1 = RRR_robot.jacob0(home_position);
-grav_1 = RRR_robot.gravload([0, 0, 1]);
-torque_1 = j1.*grav_1
-```
-<p align="center"><img src="images/torq_1.jpg" alt="torque1" style="width: 600px;"/></p>
-
-#### For Hold position, we get:
-```script
-figure(2)
-RRR_robot.plot(hold_position)
-% RRR_robot.teach()
-```
-<p align="center"><img src="images/hold_pose.jpg" alt="hold_position" style="width: 600px;"/></p>
-
-```script
-%Hold position
-j2 = RRR_robot.jacob0(hold_position);
-grav_2 = RRR_robot.gravload([0, 0, 1]);
-torque_2 = j2.*grav_2
-```
-<p align="center"><img src="images/torq_2.jpg" alt="torque2" style="width: 600px;"/></p>
-
-* According to the results, the torques for HOLD pose are higher than in HOME pose, which means computations in Matlab
-are most probably correct.
-
-### Extra Task: Planar Robot (steps 1-4 copied).
-The steps 1-4 were reused for this task, and 2 more links with some random inertia and mass values. The result can be seen from here:
-<p align="center"><img src="images/planarrobot.PNG" alt="planar" style="width: 600px;"/></p>
-
-### The Question
-
-- Why the torques are different for different configurations? 
-- Because torques were calculated using the formula [torque] = inverse(J)* G which shows that torque depends on Jacobian matrix, which is by the way depends on position of a manipulator.
-
-
 
 ## That's it. Good Luck!
