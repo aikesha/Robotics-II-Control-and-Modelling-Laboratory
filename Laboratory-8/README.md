@@ -45,7 +45,7 @@ As the result in 15 minutes we could reach the desired location. The [video](htt
 * sample angle:                             no change
 
 As the result in about 40 minutes we could reach the desired location. The [video](https://youtu.be/6Cw2Ap2KtXk) is also provided.
-<img src="images/res2.png" alt="res1" style="width: 600px;"/>
+<img src="images/2res.png" alt="res1" style="width: 600px;"/>
 
 ### Third test for learning
 
