@@ -23,11 +23,16 @@
 * Joint Control of RRR Manipulator by using Peter Corke’s Robotics Toolbox in MatLab
 * This laboratory uses Lab 5 materials for PID control in Simulink.
 
-## Laboratory 6
+## Laboratory 6: 
+* Obtain Forward Kinematics without the robot model using Matlab scripts by tuning the Neural Networks
+
 ## Laboratory 7
-## Laboratory 8
-## Laboratory 9
-## Laboratory 10
-## Laboratory 11
-## Laboratory 12
+* Obtain Inverse Kinematics without the robot model using Matlab scripts by tuning the Neural Networks
+
+## Laboratory 8: 
+* Deep Reinforcement Learning by ROS-Gazebo-RViz* to solve IK problem
+* Note: In this project I used the package rl_ws package.
+* Goal: To locate Planar robot's end-effector to the desired location.
+
+
 
